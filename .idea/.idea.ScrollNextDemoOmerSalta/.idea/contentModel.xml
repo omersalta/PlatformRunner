@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\SALTA\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\SALTA\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_ScrollNextDemoOmerSalta.1211271440.00" t="ExcludeRecursive" />
+    <e p="C:\Users\SALTA\AppData\Roaming\JetBrains\Rider2020.3\scratches" t="IncludeRecursive" />
+    <e p="D:\Program Files\Unity\Projects File\ScrollNextDemoOmerSalta" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Scripts" t="Include">
+          <e p="Bot.cs" t="Include" />
+          <e p="Box.cs" t="Include" />
+          <e p="CharacterControl.cs" t="Include" />
+          <e p="FallowingCamera.cs" t="Include" />
+          <e p="GameManager.cs" t="Include" />
+          <e p="GameObjectUtil.cs" t="Include" />
+          <e p="InputState.cs" t="Include" />
+          <e p="ObjectPool.cs" t="Include" />
+          <e p="Player.cs" t="Include" />
+          <e p="RecycleGameObject.cs" t="Include" />
+          <e p="Spawner.cs" t="Include" />
+          <e p="UtilitiesScript.cs" t="Include" />
+        </e>
+        <e p="~~ObstacleCoursePack" t="Include">
+          <e p="Controller" t="Include">
+            <e p="CameraManager.cs" t="Include" />
+            <e p="CharacterControls.cs" t="Include" />
+          </e>
+          <e p="Scripts" t="Include">
+            <e p="Bounce.cs" t="Include" />
+            <e p="FallPlat.cs" t="Include" />
+            <e p="FPSDisplay.cs" t="Include" />
+            <e p="KillZone.cs" t="Include" />
+            <e p="MovableObs.cs" t="Include" />
+            <e p="Pendulum.cs" t="Include" />
+            <e p="Rotator.cs" t="Include" />
+            <e p="SavePos.cs" t="Include" />
+            <e p="WallMovable.cs" t="Include" />
+          </e>
+        </e>
+        <e p="~~Supercyan Character Pack Free Sample" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="DemoFree.cs" t="Include" />
+            <e p="FreeCameraLogic.cs" t="Include" />
+            <e p="SimpleSampleCharacterControl.cs" t="Include" />
+          </e>
+          <e p="Shaders" t="Include">
+            <e p="Legacy" t="Include">
+              <e p="CelShader.shader" t="Include" />
+            </e>
+            <e p="SupercyanShader.shader" t="Include" />
+            <e p="SupercyanShaderLighting.cginc" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="ScrollNextDemoOmerSalta.sln" t="IncludeFlat" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
