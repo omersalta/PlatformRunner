@@ -13,14 +13,15 @@ public class InputState : Singleton<InputState> {
     private bool isDraging = false;
     public bool anyTap = false;
 
-    private void FixedUpdate() 
+    private void Update() 
     {
         anyTap = false;
         currentPos = Input.mousePosition;
+        
         #region Standalone Inputs
-
         if (!isDraging) {
-            if (Input.GetMouseButtonDown(0)) {
+            if (Input.GetMouseButtonDown(0))
+            {
                 isDraging = true;
                 downPos = currentPos;
             }
@@ -37,6 +38,37 @@ public class InputState : Singleton<InputState> {
             anyTap = true;
         }
         #endregion
+        
+        
+        
+        #region Mobile Inputs
+
+        if (!isDraging) {
+            if (Input.touches.Length > 0) {
+                if (Input.touches[0].phase == TouchPhase.Began) {
+                    isDraging = true;
+                    downPos = currentPos;
+                }
+
+                else {
+                    InterpolateDownPos();
+                    UpdateCurrentGap();
+                }
+            }
+        }
+
+        if (Input.touches.Length > 0) {
+            if (Input.touches[0].phase == TouchPhase.Ended) {
+                ResetGap();
+                Debug.Log("anytapping");
+                isDraging = false;
+                anyTap = true;
+            }
+        }
+
+        #endregion
+        
+        
     }
 
     void printGap() {

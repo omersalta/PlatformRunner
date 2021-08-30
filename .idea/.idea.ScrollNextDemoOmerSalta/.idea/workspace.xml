@@ -9,13 +9,14 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7F90ED7B-2CD3-4BC5-95F5-E9D084F29FE3/93/e18926bc/Animator.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CharacterControl.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/InputState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CharacterControl.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2A3947FE-34A6-499A-A6AB-6B20FE95EBAC/83/0a99c92b/Collision.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Spawner.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UtilitiesScript.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://D:/Program Files/Unity/Projects File/ScrollNextDemoOmerSalta/Assets/Scripts/Player.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/InputState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2A3947FE-34A6-499A-A6AB-6B20FE95EBAC/1b/fb4ce043/Collider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Spawner.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -24,14 +25,17 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/UtilitiesScript.cs" />
       <option value="$PROJECT_DIR$/Assets/~~ObstacleCoursePack/Scripts/Bounce.cs" />
       <option value="$PROJECT_DIR$/Assets/~~ObstacleCoursePack/Scripts/Pendulum.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/InputState.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/FallowingCamera.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Box.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/SceneManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CharacterControl.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Bot.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Box.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/FallowingCamera.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/InputState.cs" />
+      <option value="$PROJECT_DIR$/Assets/~~ObstacleCoursePack/Scripts/MovableObs.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameObjectUtil.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Bot.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1wzUtcwB0tXNLsoRk0kOiFnON5s" />
@@ -87,6 +91,7 @@
       <workItem from="1630070026274" duration="20482000" />
       <workItem from="1630161880855" duration="3635000" />
       <workItem from="1630185231136" duration="4248000" />
+      <workItem from="1630240525354" duration="18143000" />
     </task>
     <servers />
   </component>

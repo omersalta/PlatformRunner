@@ -69,9 +69,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1448351633598489589}
+  - component: {fileID: 7264005254250334076}
   m_Layer: 0
   m_Name: DummyRig
-  m_TagString: Untagged
+  m_TagString: BotReachCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -91,6 +92,19 @@ Transform:
   m_Father: {fileID: 2965410571451923558}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7264005254250334076
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1448351633598133269}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 20, y: 0.5, z: 0.4}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!1 &1448351633598133271
 GameObject:
   m_ObjectHideFlags: 0
@@ -239,7 +253,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 20, y: 0.5, z: 0.4}
+  m_Size: {x: 20, y: 0.5, z: 8.01}
   m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!1 &1448351633598133273
 GameObject:
@@ -1927,8 +1941,9 @@ GameObject:
   - component: {fileID: 2965410571451923558}
   - component: {fileID: 2910723960403671232}
   - component: {fileID: 2970029144658762210}
-  - component: {fileID: 2970029144658762213}
   - component: {fileID: 2970029144658762211}
+  - component: {fileID: 1778404407746800147}
+  - component: {fileID: 3979567267502231712}
   m_Layer: 0
   m_Name: Bot
   m_TagString: Enemy
@@ -1980,28 +1995,14 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2968948872113126204}
   serializedVersion: 2
-  m_Mass: 5
+  m_Mass: 3
   m_Drag: 1
   m_AngularDrag: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 2
+  m_Interpolate: 1
   m_Constraints: 112
-  m_CollisionDetection: 0
---- !u!136 &2970029144658762213
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2968948872113126204}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.2
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
+  m_CollisionDetection: 1
 --- !u!114 &2970029144658762211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2012,6 +2013,32 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 524340d47dd47ad489f50f86502c64e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!136 &1778404407746800147
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2968948872113126204}
+  m_Material: {fileID: 13400000, guid: c5881576458665e4eb49f9bcbb8f6066, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.3
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &3979567267502231712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2968948872113126204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ab63e97ea0149d59faadc1a2edb9be1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2968965936478526554

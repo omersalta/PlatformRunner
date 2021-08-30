@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Users\SALTA\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\SALTA\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_ScrollNextDemoOmerSalta.1211271440.00" t="ExcludeRecursive" />
+    <e p="C:\Users\SALTA\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_ScrollNextDemoOmerSalta.560663987.00" t="ExcludeRecursive" />
     <e p="C:\Users\SALTA\AppData\Roaming\JetBrains\Rider2020.3\scratches" t="IncludeRecursive" />
-    <e p="D:\Program Files\Unity\Projects File\ScrollNextDemoOmerSalta" t="IncludeRecursive">
+    <e p="C:\Users\SALTA\Desktop\NarcadeDemo\ScrollNextDemoOmerSalta" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
@@ -15,6 +15,7 @@
           <e p="GameManager.cs" t="Include" />
           <e p="GameObjectUtil.cs" t="Include" />
           <e p="InputState.cs" t="Include" />
+          <e p="LevelControl.cs" t="Include" />
           <e p="ObjectPool.cs" t="Include" />
           <e p="Player.cs" t="Include" />
           <e p="RecycleGameObject.cs" t="Include" />

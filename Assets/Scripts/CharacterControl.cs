@@ -160,13 +160,17 @@ public class CharacterControl : MonoBehaviour
         
         m_currentHVelocity = currentGap/(400/m_turnSpeed);
         m_currentVVelocity = Mathf.Lerp(m_vAcceleration, m_currentVVelocity, 0.7f);
-        
+
+        if (!m_isGrounded) {
+            m_currentVVelocity = 0;
+        }
+        Bot.UpdateTargetV((m_currentVVelocity * m_speedMult) * Vector3.forward);
         Vector3 hDirection = camera.right * m_currentHVelocity + m_currentVVelocity * Vector3.forward;
         
         if (hDirection != Vector3.zero)
         {
             m_currentDirection = Vector3.Slerp(m_currentDirection, hDirection, Time.deltaTime * m_interpolation + 0.8f);
-
+            
             transform.rotation = Quaternion.LookRotation(m_currentDirection);
             transform.position += m_currentDirection * m_speedMult * Time.deltaTime;
 

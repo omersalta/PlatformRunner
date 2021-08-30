@@ -9,6 +9,11 @@ TagManager:
   - Stuner
   - Box
   - BotLargeCollider
+  - BotReachCollider
+  - BarrierCollider
+  - BarrierBoxL
+  - BarrierBoxR
+  - FinalBox
   layers:
   - Default
   - TransparentFX

@@ -11,23 +11,29 @@ public class GameManager : MonoBehaviour
     private InputState IS;
     
     enum State {
+        INITILIZE,
         GET_INPUT,
         GAME_RUNNING,
-        GAME_WON,
         GAME_OVER,
+        GAME_WON,
         RESTART,
         NEXT_GAME,
     }
     
     void Start() {
         IS = FindObjectOfType<InputState>();
-        currentState = State.GET_INPUT;
+        currentState = State.INITILIZE;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
         switch (currentState) {
+            
+            case State.INITILIZE:
+                lockAllStartLocks();
+                currentState = State.GET_INPUT;
+                break;
             case State.GET_INPUT:
                 Debug.Log("game manager GET_INPUT");
                 if (IS.anyTap) {
@@ -40,29 +46,25 @@ public class GameManager : MonoBehaviour
                 
                 break;
             case State.GAME_WON:
-                
+                Debug.Log("game manager GAME WON!!!!");
                 break;
             case State.GAME_OVER:
                 Debug.Log("game manager gameover");
-                lockAllStartLocks();
                 break;
             case State.RESTART:
                 currentState = State.GET_INPUT;
                 break;
             case State.NEXT_GAME:
-                
                 break;
         }
     }
     
     private void UnlockAllStartLocks() {
-        Bot.startLock = false;
         FindObjectOfType<CharacterControl>().Unlock();
         FindObjectOfType<Spawner>().ActiveSpawner();
     }
     
     private void lockAllStartLocks() {
-        Bot.startLock = true;
         FindObjectOfType<CharacterControl>().Lock();
         FindObjectOfType<Spawner>().active = false;
     }
@@ -74,5 +76,9 @@ public class GameManager : MonoBehaviour
 
     public void GameOver() {
         currentState = State.GAME_OVER;
+    }
+    
+    public void GameWon() {
+        currentState = State.GAME_WON;
     }
 }

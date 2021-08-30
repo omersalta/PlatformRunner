@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,10 +20,20 @@ public class Player : MonoBehaviour {
         IS = FindObjectOfType<InputState>();
     }
 
+    private void Update() {
+        if (transform.position.y < -10) {
+            Destroy(gameObject);
+        }
+    }
+
     void OnTriggerEnter(Collider other) {
         
         if (other.tag == "Box") {
             other.GetComponent<Box>().CollideWithPlayer();
+        }
+        
+        if (other.tag == "FinalBox") {
+            FindObjectOfType<GameManager>().GameWon();
         }
         
         if (other.tag == "Enemy") {
@@ -34,30 +45,35 @@ public class Player : MonoBehaviour {
             other.GetComponentInParent<Bot>().SlowDown();
         }
         
+        if (other.tag == "BotReachCollider") {
+            other.GetComponentInParent<Bot>().YouReachYourTarget();
+        }
+        
     }
     
+    private void OnTriggerStay(Collider other) {
+        if (other.tag == "BarrierBoxR") {
+            playerCannotGoRigthAnyMore = true;
+        }
+        if (other.tag == "BarrierBoxL") {
+            playerCannotGoLeftAnyMore = true;
+        }
+    }
+    
+    private void OnTriggerExit(Collider other) {
+        if (other.tag == "BarrierBoxR") {
+            playerCannotGoRigthAnyMore = false;
+        }
+        if (other.tag == "BarrierBoxL") {
+            playerCannotGoLeftAnyMore = false;
+        }
+    }
+
     public void die() {
         FindObjectOfType<GameManager>().GameOver();
     }
     
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        
-        if (transform.position.x < controlLimit.x) {
-            playerCannotGoLeftAnyMore = true;
-        }else {
-            playerCannotGoLeftAnyMore = false;
-        }
-        
-        if (transform.position.x > controlLimit.y) {
-            playerCannotGoRigthAnyMore = true;
-        }else {
-            playerCannotGoRigthAnyMore = false;
-        }
-        
-    }
-
+    
     public float LimitedGapCalculator() {
         var currentGap = IS.GetHorizontalGap();
         

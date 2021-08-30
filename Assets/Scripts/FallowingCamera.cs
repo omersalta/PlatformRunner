@@ -15,12 +15,12 @@ public class FallowingCamera : MonoBehaviour {
     }
     
     void FixedUpdate() {
-        if (TargetObject.transform.position.y > -1) {
+        if (TargetObject && TargetObject.transform.position.y > -1) {
             Vector3 ofset = fallowingDistanceOffset;
             transform.position = Vector3.Lerp(transform.position, TargetObject.transform.position+ofset, 0.5f);
         }
         else {
-            TargetObject.GetComponent<Player>().die();
+            //TargetObject.GetComponent<Player>().die();
         }
     }
     
