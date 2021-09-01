@@ -7,7 +7,11 @@ public class Spawner : MonoBehaviour {
     public GameObject prefab;
     public bool active;
     public Vector2 delayRandomRange;
-    public Vector2 fallowOffset;
+    public Vector3 fallowOffset;
+    public Vector2 xLimit;
+    public Vector2 zLimit;
+
+    [SerializeField] private int singlePartyCreateCount; 
     private float randomDelay;
     private Player P;
     
@@ -25,7 +29,7 @@ public class Spawner : MonoBehaviour {
     void Update() {
         
         if (P) {
-            transform.position = P.transform.position + new Vector3(0, fallowOffset.x, fallowOffset.y);
+            transform.position = P.transform.position + fallowOffset;
         }
         
     }
@@ -43,11 +47,28 @@ public class Spawner : MonoBehaviour {
             StopCoroutine(EnemyGenerator ());
         }
         else {
-            var newPos = transform.position;
-            
-            GameObjectUtil.Instantiate(prefab, newPos);
+            InstatntiateMore(prefab, singlePartyCreateCount);
             ResetDelay();
             StartCoroutine (EnemyGenerator ());
+        }
+        
+    }
+    
+    public Vector3 RandomizePosition_XZ(Vector2 xLimit, Vector2 zLimit) {
+        
+        var x = Random.Range(xLimit.x, zLimit.y);;
+        var z = Random.Range(zLimit.x, zLimit.y);
+        Vector3 newLocPos = new Vector3(x, 0, z);
+        return newLocPos;   
+    }
+
+    void InstatntiateMore(GameObject prefab, int count) {
+
+        
+        for (int i = 0; i < count; i++) {
+            var newPos = RandomizePosition_XZ(xLimit, zLimit);
+            newPos += transform.position;
+            GameObjectUtil.Instantiate(prefab, newPos);
         }
         
     }

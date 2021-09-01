@@ -15,7 +15,7 @@ public class Box : MonoBehaviour {
     }
     
     public void CollideWithPlayer() {
-        ChangeColor();
+        //ChangeColor();
         //FallBox();
         Invoke("FallBox",0.2f);
     }
@@ -27,11 +27,13 @@ public class Box : MonoBehaviour {
     private void FallBox() {
         StartCoroutine(FallCoroutine(0f));
     }
-
     
     IEnumerator FallCoroutine(float currentFrequency) {
         yield return new WaitForSeconds(updatefrequency);
 
+        var cT = 1 - (1 / (fallTime / currentFrequency)+0.2f); //colorTransparancy
+        GetComponent<Renderer>().material.SetColor("_Color", new Color(1f, cT, cT, 1f));
+        
         transform.position += Vector3.down * Time.deltaTime * fallVelocity;
         
         if (currentFrequency >= fallTime) {

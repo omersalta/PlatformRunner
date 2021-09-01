@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
+
 using Debug = UnityEngine.Debug;
 
 public class GameManager : MonoBehaviour
@@ -9,6 +10,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     private State currentState;
     private InputState IS;
+    public GameObject PANEL;
     
     enum State {
         INITILIZE,
@@ -32,12 +34,14 @@ public class GameManager : MonoBehaviour
             
             case State.INITILIZE:
                 lockAllStartLocks();
+                FindObjectOfType<FallowingCamera>().FallowTarget();
                 currentState = State.GET_INPUT;
                 break;
             case State.GET_INPUT:
-                Debug.Log("game manager GET_INPUT");
+                //Debug.Log("game manager GET_INPUT");
                 if (IS.anyTap) {
                     UnlockAllStartLocks();
+                    PlayGame();
                     currentState = State.GAME_RUNNING;
                 }
                 break;
@@ -46,10 +50,10 @@ public class GameManager : MonoBehaviour
                 
                 break;
             case State.GAME_WON:
-                Debug.Log("game manager GAME WON!!!!");
+                //Debug.Log("game manager GAME WON!!!!");
                 break;
             case State.GAME_OVER:
-                Debug.Log("game manager gameover");
+                //Debug.Log("game manager gameover");
                 break;
             case State.RESTART:
                 currentState = State.GET_INPUT;
@@ -62,23 +66,29 @@ public class GameManager : MonoBehaviour
     private void UnlockAllStartLocks() {
         FindObjectOfType<CharacterControl>().Unlock();
         FindObjectOfType<Spawner>().ActiveSpawner();
+        FindObjectOfType<FallowingCamera>().FallowTarget();
     }
     
     private void lockAllStartLocks() {
         FindObjectOfType<CharacterControl>().Lock();
         FindObjectOfType<Spawner>().active = false;
+        FindObjectOfType<FallowingCamera>().UnFallowTarget();
     }
     
     
-    public void PlayButton() {
-        
+    public void PlayGame() {
+        FindObjectOfType<PannelManager>().GameStart();
     }
 
     public void GameOver() {
+        lockAllStartLocks();
+        FindObjectOfType<PannelManager>().Gameover();
         currentState = State.GAME_OVER;
     }
     
     public void GameWon() {
+        lockAllStartLocks();
+        FindObjectOfType<PannelManager>().GameWon();
         currentState = State.GAME_WON;
     }
 }

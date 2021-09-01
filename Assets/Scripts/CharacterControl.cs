@@ -158,7 +158,8 @@ public class CharacterControl : MonoBehaviour
 
         var currentGap = PLAYER.LimitedGapCalculator();
         
-        m_currentHVelocity = currentGap/(400/m_turnSpeed);
+        //m_currentHVelocity = currentGap/(400/m_turnSpeed);
+        m_currentHVelocity = Mathf.Lerp(currentGap/(400/m_turnSpeed), m_currentHVelocity, 0.7f);
         m_currentVVelocity = Mathf.Lerp(m_vAcceleration, m_currentVVelocity, 0.7f);
 
         if (!m_isGrounded) {

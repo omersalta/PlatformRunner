@@ -5,6 +5,7 @@ using UnityEngine;
 public class FallowingCamera : MonoBehaviour {
     
     private GameObject TargetObject;
+    private bool fallowing;
     
     [SerializeField]private Vector3 fallowingDistanceOffset;
     [SerializeField]private Vector3 lookingAngle;
@@ -13,15 +14,26 @@ public class FallowingCamera : MonoBehaviour {
     void Start() {
         TargetObject = FindObjectOfType<Player>().gameObject;
     }
-    
+
+    public void FallowTarget() {
+        Debug.Log("fallowing");
+        fallowing = true;
+    }
+    public void UnFallowTarget() {
+        fallowing = false;
+    }
     void FixedUpdate() {
-        if (TargetObject && TargetObject.transform.position.y > -1) {
-            Vector3 ofset = fallowingDistanceOffset;
-            transform.position = Vector3.Lerp(transform.position, TargetObject.transform.position+ofset, 0.5f);
+        
+        if (fallowing) {
+            if (TargetObject && TargetObject.transform.position.y > -1) {
+                Vector3 ofset = fallowingDistanceOffset;
+                transform.position = Vector3.Lerp(transform.position, TargetObject.transform.position+ofset, 0.5f);
+            }
+            else {
+                //TargetObject.GetComponent<Player>().die();
+            } 
         }
-        else {
-            //TargetObject.GetComponent<Player>().die();
-        }
+       
     }
     
 }

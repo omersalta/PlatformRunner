@@ -6,7 +6,7 @@ using Random = UnityEngine.Random;
 
 public class Bot : MonoBehaviour,IRecyle {
     
-    public static Vector2 startPosLimit = new Vector2(8,7);
+    
     private static GameObject allBotsWantsToReachThis;
     public static Vector3 tagetCurrentDir;
     
@@ -24,7 +24,13 @@ public class Bot : MonoBehaviour,IRecyle {
     
      
     public void Restart() {
-        RandomizePosition();
+        ForceForward();
+        isReachedTarget = false;
+        isCloseTarget = false;
+    }
+
+    private void Start() {
+        return;
         ForceForward();
         isReachedTarget = false;
         isCloseTarget = false;
@@ -65,30 +71,6 @@ public class Bot : MonoBehaviour,IRecyle {
         tagetCurrentDir = curentDir;
     }
     
-    
-    
-    public void RandomizePosition() {
-        var x = Random.Range(-0.5f, startPosLimit.x);
-        var z = Random.Range(-0.5f, startPosLimit.y);
-        
-        Vector3 newLocPos = new Vector3(x, 0f, z);;
-        transform.localPosition = reCalculatePosAccordingLimits(newLocPos);
-    }
-
-    private Vector3 reCalculatePosAccordingLimits (Vector3 givenPos) {
-
-        if (givenPos.x < startPosLimit.x) {
-            givenPos = new Vector3(startPosLimit.x, givenPos.y, givenPos.z);
-            return givenPos;
-        }
-        
-        if (givenPos.x > startPosLimit.y) {
-            givenPos = new Vector3(startPosLimit.y, givenPos.y, givenPos.z);
-            return givenPos;
-        }
-        
-        return givenPos;
-    }
     
     void ForceForward() {
         GetComponent<Animator>().SetFloat("Move", 1);

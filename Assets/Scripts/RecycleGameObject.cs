@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -14,7 +15,6 @@ public class RecycleGameObject : MonoBehaviour {
 	private List<IRecyle> recycleComponents;
 
 	void Awake(){
-
 		var components = GetComponents<MonoBehaviour> ();
 		recycleComponents = new List<IRecyle> ();
 		foreach (var component in components) {
@@ -24,6 +24,17 @@ public class RecycleGameObject : MonoBehaviour {
 		}
 	}
 
+	public void ResetIRecyle() {
+		recycleComponents = new List<IRecyle> ();
+	}
+
+	public void Start(){
+		gameObject.SetActive (true);
+
+		foreach (var component in recycleComponents) {
+			component.Restart();
+		}
+	}
 
 	public void Restart(){
 		gameObject.SetActive (true);
