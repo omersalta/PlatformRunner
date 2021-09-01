@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 25
-  stunTime: 0.5
+  stunTime: 1
 --- !u!1 &5263193850122822931
 GameObject:
   m_ObjectHideFlags: 0

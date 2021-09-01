@@ -27,13 +27,13 @@ public class ArtDirector : MonoBehaviour {
 
     private Vector3 RandomizedPosForFX(float randRange) {
         var newPos = Camera.main.transform.position;
-        return newPos + new Vector3(Random.Range(-randRange,randRange), Random.Range(-randRange,randRange), 8);
+        return newPos + new Vector3(Random.Range(-randRange,randRange), Random.Range(-randRange,randRange), 9);
     }
     
     private void CreateFXMore(int index,int count) {
         
         for (int i = 0; i < count; i++) {
-            CreateFX(index, RandomizedPosForFX(6));    
+            CreateFX(index, RandomizedPosForFX(5f));    
         }
         
     }
@@ -75,10 +75,10 @@ public class ArtDirector : MonoBehaviour {
     }
     
     public void PlayerFinishingCinematic(GameObject Player) {
-        SpesificEditedFXUsing(4,0.3f);
+        SpesificEditedFXUsing(4,0.2f);
         FindObjectOfType<CharacterControl>().Lock();
         float totalTime = 1.5f;
-        float freq = 0.01f;
+        float freq = 0.05f;
         Vector3 targetPos = GameObject.Find("FinishTarget").transform.position;
         Vector3 singleFreqDiff = Vector3.LerpUnclamped(Vector3.zero, targetPos-Player.transform.position,1/(totalTime/freq) );
         

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6652921154704718722}
   - component: {fileID: 6652921154704718726}
   m_Layer: 0
-  m_Name: MovableWall
+  m_Name: MovableWall_H
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9680173c898d4d2419181ffc87f5193a, type: 2}
+  - {fileID: 2100000, guid: 3fc3bbc4a9839d24eb455f5e511a1c39, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

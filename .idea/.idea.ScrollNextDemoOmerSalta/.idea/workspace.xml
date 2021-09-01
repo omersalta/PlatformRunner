@@ -38,10 +38,8 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/GameObjectUtil.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CharacterControl.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/FallowingCamera.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Box.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Helicopter.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/TimelinePlayer.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/ArtDirector.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" />
@@ -50,6 +48,8 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/PannelManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UtilitiesScript.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/LevelControl.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Box.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/ArtDirector.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1wzUtcwB0tXNLsoRk0kOiFnON5s" />
@@ -107,7 +107,7 @@
       <workItem from="1630185231136" duration="4248000" />
       <workItem from="1630240525354" duration="18143000" />
       <workItem from="1630332822499" duration="4370000" />
-      <workItem from="1630388392848" duration="33164000" />
+      <workItem from="1630388392848" duration="34809000" />
     </task>
     <servers />
   </component>

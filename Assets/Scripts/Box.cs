@@ -5,9 +5,9 @@ using UnityEngine;
 public class Box : MonoBehaviour {
     
     
-    static private float fallTime = 1.2f;
-    static private float fallVelocity = 5f;
-    static private float updatefrequency = 0.01f;
+    static private float fallTime = 1f;
+    static private float fallVelocity = 7f;
+    static private float updatefrequency = 0.05f;
     
     void Start()
     {
